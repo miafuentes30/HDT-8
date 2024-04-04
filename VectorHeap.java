@@ -3,13 +3,25 @@
  */
 
 
- class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E> {
+/*
+ * @param <E> el tipo de elementos que contendrá la cola de prioridad, debe ser comparable
+ */
+class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E> {
     private java.util.Vector<E> data;
 
+    /**
+     * Construye un nuevo VectorHeap vacío.
+     */
     public VectorHeap() {
         data = new java.util.Vector<>();
     }
 
+    /**
+     * Agrega un elemento a la cola de prioridad.
+     * 
+     * @param value el elemento a agregar
+     * @return true si el elemento se agregó correctamente
+     */
     @Override
     public boolean add(E value) {
         data.add(value);
@@ -25,6 +37,11 @@
         return true;
     }
     
+    /**
+     * Elimina y devuelve el elemento de menor prioridad en la cola.
+     * 
+     * @return el elemento de menor prioridad, o null si la cola está vacía
+     */
     @Override
     public E remove() {
         if (data.isEmpty()) return null;
@@ -50,14 +67,23 @@
         return result;
     }
     
+    /**
+     * Verifica si la cola de prioridad está vacía.
+     * 
+     * @return true si la cola de prioridad está vacía, false de lo contrario
+     */
     @Override
     public boolean isEmpty() {
         return data.isEmpty();
     } 
     
+    /**
+     * Obtiene el número de elementos en la cola de prioridad.
+     * 
+     * @return el número de elementos en la cola de prioridad
+     */
     @Override
     public int size() {
         return data.size();
     }
 }
- 
